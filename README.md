@@ -974,6 +974,99 @@ https://my.planethoster.com/v2/hosting-management/overview
 
 
 
+ 
+ .account-menu {
+  background-color: $blue-light;
+  margin-bottom: 3rem;
+  padding: 1.5rem 0;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      a {
+        align-items: center;
+        background-color: $blue-light;
+        color: $blue-dark;
+        display: flex;
+        font-weight: 600;
+        height: 3rem;
+        padding: 0 3rem;
+        position: relative;
+        text-decoration: none;
+
+        &.dropdown:after {
+          @include transition(transform .3s ease);
+          background: transparent url('../../../images/icons/chevron-down-blue-darker.svg') no-repeat center center / 1.4rem 1.4rem;
+          content: '';
+          height: 1.4rem;
+          position: absolute;
+          right: .8rem;
+          top: .8rem;
+          width: 1.4rem;
+        }
+
+        &:focus, &:hover {
+          background-color: #AED2DF;
+          color: $blue-darker;
+        }
+
+        > svg {
+          fill: $blue-darker;
+          height: 1.4rem;
+          margin-right: .5rem;
+          width: 1.4rem
+        }
+      }
+
+      ul {
+        @include transition(max-height .3s ease);
+        max-height: 0;
+        overflow: hidden;
+
+        li {
+          a {
+            font-weight: 400;
+            padding-left: 4.9rem;
+          }
+        }
+      }
+
+      &:focus, &:hover {
+        a.dropdown:after {
+          @include transform(rotate(180deg));
+        }
+
+        ul {
+          max-height: 20rem;
+        }
+      }
+    }
+  }
+}
+
+.account-menu-design {
+  @extend .account-menu;
+  background-color: lightgray;
+  margin-bottom: 3rem;
+  margin-left: 7rem;
+  padding: 1.5rem 0;
+  
+  width: 300px;
+  ul {
+    list-style: none;
+    margin: 10px;
+    padding: 10px;
+  }
+  h5{
+    text-align: center;
+  }
+
+
+}
+
 
 
 
